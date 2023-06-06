@@ -1,0 +1,61 @@
+.Kategori {
+    top: 70px;
+    width: 100%;
+    height: 23px;
+    padding: 7px;
+    color: #fff;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(255, 166, 2);
+}
+.homeButton {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+.loginButton {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+.populer {
+    display: none;
+}
+.Kategori h4:hover,.homeButton:hover,.loginButton:hover {
+    cursor: pointer;
+    color: rgba(0, 19, 30, 0.814);
+}
+
+@media (max-width: 600px) {
+    .Kategori {
+        font-size: 60%;
+        align-items: center;
+    }
+    .populer {
+        display: inherit;
+    }
+}
+@media (max-width: 375px) {
+    .Kategori {
+        padding-left: 1px;
+        font-size: 45%;
+        align-items: center;
+    }
+    .Kategori svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+@media (max-width: 345px) {
+    .Kategori {
+        padding-left: 1px;
+        font-size: 35%;
+        align-items: center;
+    }
+    .Kategori svg {
+        width: 10px;
+        height: 10px;
+    }
+}

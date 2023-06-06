@@ -1,0 +1,178 @@
+.Profile {
+    gap: 30px;
+    max-height: 96%;
+    display: grid;
+    padding: 10px;
+    overflow-y: hidden;
+    border-radius: 5px;
+    background-color: rgb(70, 70, 70);
+    grid-template-columns: 30% 1fr;
+}
+.Profile .content {
+    grid-template-columns: repeat(2,minmax(150px,1fr));
+}
+.headProfile {
+    gap: 10px;
+    display: flex;
+    height: 100%;
+    padding-left: 5px;
+    flex-direction: column;
+}
+.textProfile {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bio {
+    gap: 20px;
+    display: flex;
+}
+.info div {
+    gap: 10px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.info {
+    gap: 20px;
+    display: flex;
+}
+.info div:hover {
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(19, 93, 252, 0.552);;
+}
+.bio button {
+    padding: 0 20px;
+    border: none;
+    border-radius: 3px;
+}
+.bio button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: rgba(19, 93, 252, 0.552);
+}
+.imgTerakhir img , .image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.editProfile {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.updateImg {
+    display: flex;
+    justify-content: space-between;
+}
+.updateImg label:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(19, 93, 252, 0.552);
+}
+.updateBio {
+    gap: 9px;
+    display: flex;
+    flex-direction: column;
+}
+.updateBio input {
+    outline: none;
+    border: none;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.updateBio textarea {
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+.updateBio button {
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.updateBio #file {
+    display: none;
+}
+.image {
+    gap: 10px;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.btnProfile {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.btnEdit {
+    width: max-content;
+    border: none;
+    border-radius: 3px;
+    padding:  2px 5px;
+}
+.btnEdit:hover {
+    color: white;
+    cursor: pointer;
+    background-color: rgba(19, 93, 252, 0.552);
+}
+.bodyProfile .content {
+    padding: 5px;
+    max-height: 100%;
+    overflow-y: scroll;
+    border-radius: 5px;
+    background-color: white;
+}
+.closeProfile svg:hover {
+    color: white;
+    cursor: pointer;
+    background-color:  rgba(19, 93, 252, 0.552);;
+}
+
+
+/* responsive */
+@media (max-width: 920px) {
+    .Profile .content {
+        max-height: 18.4%;
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 820px) {
+    .Profile {
+        overflow-y: scroll;
+        grid-template-columns: 1fr;
+    }
+    .Profile .content {
+        max-height: 100%;
+        overflow-y: hidden;
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 575px) {
+    .Profile .content {
+        grid-template-columns: repeat(2,minmax(150px,1fr));
+    }
+}
+@media (max-width: 380px) {
+    .Profile .content {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 360px) {
+    .Profile {
+        width: 360px;
+    }
+}

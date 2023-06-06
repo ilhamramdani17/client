@@ -1,0 +1,207 @@
+.Posts {
+    gap: 13px;
+    width: 100%;
+    color: #fff;
+    display: grid;
+    padding: 5px 2%;
+    height: 71.5%;
+    overflow-y: scroll;
+    background-color: rgb(0, 19, 30);
+    grid-template-columns: repeat(2,minmax(150px,1fr));
+}
+.card-post-docx {
+    gap: 5px;
+    padding: 8px;
+    display: flex;
+    height: max-content;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #0169e8;
+}
+.card-post-pdf {
+    gap: 5px;
+    padding: 8px;
+    display: flex;
+    height: max-content;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #c80707;
+}
+.card-post-img {
+    gap: 5px;
+    padding: 8px;
+    display: flex;
+    height: max-content;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(1, 107, 1);
+}
+.Posts .ujang {
+    gap: 25px;
+    display: flex;
+}
+.Posts .card-post-docx .ujang, .Posts .card-post-pdf .ujang, .Posts .card-post-img .ujang {
+    padding: 0;
+}
+.revFile img{
+    width: 12vh;
+}
+.revImg img {
+    width: 12vh;
+    overflow-x: scroll;
+}
+.card-post-docx:hover{
+    cursor: pointer;
+    background-color: #0474fd;
+}
+.card-post-pdf:hover {
+    cursor: pointer;
+    background-color: #ff0000;
+}
+.card-post-img:hover {
+    cursor: pointer;
+    background-color: green;
+}
+.card-post-docx :nth-child(1),.card-post-pdf :nth-child(1),.card-post-img :nth-child(1) {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.Posts .post-file {
+    width: 18.5%;
+}
+.Posts .post-deskripsi {
+    width: 80%;
+    font-size: small;
+}
+.Posts .action {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.action button:hover {
+    color: orange;
+    cursor: pointer;
+}
+.post-file button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-top: 4px;
+}
+.img {
+    background-color: rgb(71, 169, 255);
+}
+.pdf {
+    background-color: red;
+}
+.action button {
+    border: none;
+    background-color: #dadada;
+}
+.response {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+.response div {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.response div:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: orange;
+}
+
+.Posts .Setting {
+    right: 23%;
+    color:#000;
+}
+
+@media (max-width: 1200px) {
+    .img,.pdf {
+        width: 80%;
+    }
+    .post-deskripsi p {
+        font-size: 85%;
+    }
+    .Posts .Setting {
+        right: 15%;
+    }
+}
+@media (max-width: 1100px) {
+    .Posts .Setting {
+        right: 5%;
+    }
+}
+@media (max-width: 870px) {
+    .Posts {
+        width: 90%;
+        padding: 5px 5%;
+        overflow-x: hidden;
+        grid-template-columns: 1fr;
+    }
+    .hide {
+        display: inherit;
+    }
+    .post-deskripsi p {
+        font-size: inherit;
+    }
+    .Posts .Setting {
+        right: 2%;
+        width: 90%;
+        font-size: 70%;
+    }
+    .Posts .Setting .pic button {
+        padding: 10px;
+    }
+}
+@media (max-width: 780px) {
+    .Posts .Setting {
+        font-size: 60%;
+    }
+}
+@media (max-width: 685px) {
+    .hide {
+        display: none;
+    }
+    .Posts .Setting {
+        right: 11%;
+        width: 70%;
+        font-size: 80%;
+    }
+    .Posts .Setting .pic button {
+        padding: 50px 35px;
+    }
+}
+@media (max-width: 645px) {
+    .Posts .Setting {
+        font-size: 57%;
+    }
+    .Posts .Setting .pic button {
+        padding: 25px 10px;
+    }
+}
+@media (max-width: 375px) {
+    .hide {
+        display: none;
+    }
+    .Posts .post-des {
+        font-size: 50%;
+    }
+    .Posts .Setting {
+        width: 70%;
+    }
+}
+@media (max-width: 345px) {
+    .Posts {
+        height: 69.5%;
+    }
+    .revFile img,.revImg img{
+        width: 9vh;
+    }
+}

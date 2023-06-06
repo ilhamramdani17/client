@@ -1,0 +1,176 @@
+.AddPost {
+    gap: 15px;
+    width: 100%;
+    display: grid;
+    padding: 1%;
+    height: 71.5%;
+    overflow: scroll;
+    grid-template-columns: 1fr 0.6fr;
+    background-color: rgb(0, 19, 30);
+}
+.addContainer {
+    gap: 25px;
+    width: 100%;
+    display: grid;
+    padding: 3px;
+    color: #eaeaea;
+    height: max-content;
+    border-radius: 5px;
+    border: 2px dashed #b3b3b3;
+}
+.reviewContainer {
+    padding: 0;
+    height: 45.3%;
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaeaea;
+}
+.viewBody {
+  padding: 1px; 
+  width: 100%; 
+}
+.notRev {
+    padding: 4px 4px 0 4px;
+    width: max-content;
+    text-align: center;
+    border: 2px dashed #b3b3b3;
+}
+.addText {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.privasi {
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.addBody {
+    height: max-content;
+}
+.addBody form {
+    gap: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.isi input {
+    width: 90%;
+    border: 1px solid #afafaf;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+.isi {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.cate {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+select {
+    width: 80px;
+    cursor: pointer;
+    outline: none;
+}
+.addBody button {
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.addFile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addFile input {
+    display: none;
+}
+.addBody button:hover {
+    color: white;
+    background-color: orange;
+}
+.reviewPdf {
+    gap: 10px;
+    padding: 2px;
+    display: flex;
+    width: max-content;
+    align-items: center;
+}
+.reviewImg {
+    gap: 10px;
+    padding: 2px;
+    display: flex;
+    width: max-content;
+    align-items: center;
+}
+.reviewPdf span,.reviewImg span {
+    width: 20px;
+    height: 20px;
+    border: none;
+    display: flex;
+    padding: 2px;
+    color: black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaeaea;
+}
+.reviewPdf img {
+    width: 40px;
+    max-height: 90px;
+    border-radius: 5px;
+}
+.reviewImg img {
+    width: 43px;
+    height: 43px;
+    border-radius: 5px;
+}
+.reviewPdf svg {
+    cursor: pointer;
+}
+svg {
+    cursor: pointer;
+}
+.error {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+.error h3 {
+    color: orange;
+}
+.error svg {
+    color: orange;
+}
+
+@media (max-width: 600px) {
+    .addContainer {
+        padding: 1%;
+        width: 98%;
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 345px) {
+    .AddPost {
+        font-size: .6rem;
+        margin-top: 3px;
+        grid-template-columns: 1fr;
+    }
+    .isi input {
+        height: 10px;
+    }
+    .reviewContainer  {
+        display: none;
+    }
+}

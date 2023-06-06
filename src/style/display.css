@@ -1,0 +1,74 @@
+.display {
+    gap: 2px;
+    display: grid;
+    max-height: 250px;
+    overflow-y: scroll;
+    grid-template-columns: repeat(3,minmax(100px,1fr));
+}
+.display img {
+    width: 107px;
+    height: 107px;
+    cursor: pointer;
+    border: 1px solid;
+}
+.info {
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info div small {
+    font-size: 70%;
+}
+.contain {
+    display: flex;
+    flex-direction: column;
+}
+.subs {
+    gap: 5px;
+    padding: 2px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+}
+.subs:hover {
+    cursor: pointer;
+    background-color: #dddddd;
+}
+.subs button {
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+}
+.overflow {
+    opacity: 0;
+    width: 109px;
+    height: 109px;
+    color: #fff;
+    display: flex;
+    margin-top: -114px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000;
+}
+.posts:hover .overflow {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media (max-width: 345px) {
+    .display {
+        grid-template-columns: repeat(2,minmax(80px,1fr));
+    }
+    .display img {
+        width: 60px;
+        height: 60px;
+    }
+    .overflow {
+        width: 62px;
+        height: 62px;
+        margin-top: -65px;
+    }
+}

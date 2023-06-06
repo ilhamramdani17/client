@@ -1,0 +1,25 @@
+.Main {
+    top: 190px;
+    width: 64.4%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+}
+.UpMain {
+    top: 110px;
+    width: 64.4%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+}
+
+@media (max-width: 870px) {
+    .Main,.UpMain {
+        width: 53.3%;
+    }
+}
+@media (max-width: 685px) {
+    .Main,.UpMain {
+        width: 100%;
+    }
+}

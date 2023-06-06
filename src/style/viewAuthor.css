@@ -1,0 +1,104 @@
+.viewAuthor {
+    gap: 15px;
+    top: 70px;
+    z-index: 5;
+    right: 10px;
+    display: flex;
+    color: #000;
+    padding: 15px 13px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #fff;
+}
+.viewAuthor .bio .name {
+    display: flex;
+    padding: 0;
+    align-items: start;
+    justify-items: start;
+    flex-direction: column;
+}
+.viewAuthor .bio .name strong {
+    margin-left: -5px;
+}
+.pic {
+    padding: 5px;
+    max-height: 140px;
+    border-radius: 5px;
+    background-color: rgb(0, 19, 30);
+}
+.viewAuthor .pic button {
+    border: none;
+    color: #fff;
+    padding: 50px 35px;
+    background-color: rgb(0, 19, 30);
+}
+.viewAuthor .bio {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.user-bio {
+    gap: 7px;
+    display: flex;
+}
+.user-bio div {
+    gap: 10px;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e0e0e0;
+}
+.user-bio div:hover {
+    color: #fff;
+    background-color: rgb(0, 19, 30);
+}
+.log {
+    gap: 10px;
+    padding: 5px;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+.viewAuthor .close {
+    height: max-content;
+}
+.log:hover {
+    background-color: rgb(0, 19, 30);
+}
+@media (max-width: 345px) {
+    .viewAuthor {
+        gap: 5px;
+        right: 0;
+        max-width: 255px;
+        font-size: 0.5rem;
+    } 
+    .viewAuthor .pic {
+        max-height: 90px;
+    }
+    .viewAuthor .pic button {
+        padding: 17px 3px;
+    } 
+    .viewAuthor .bio {
+        gap: 5px;
+        max-width: 150px;
+    }
+    .viewAuthor .bio .name {
+        padding-left: 8px;
+    }
+    .viewAuthor .user-bio {
+        gap: 5px;
+        padding: 3px;
+    }
+    .viewAuthor .user-bio div {
+        gap: 5px;
+        padding: 3px;
+    }
+}

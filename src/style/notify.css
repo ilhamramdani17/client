@@ -1,0 +1,67 @@
+.Notify {
+    gap: 5px;
+    top: 70px;
+    z-index: 5;
+    right: .7%;
+    width: 400px;
+    display: flex;
+    padding: 15px 13px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    flex-direction: column;
+    background-color: #fff;
+}
+.headNot {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.headNot svg {
+    padding: 5px;
+    border-radius: 5px;
+}
+.headNot svg:hover {
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: red;
+}
+.displayNot div {
+    gap: 10px;
+    display: grid;
+    overflow: hidden;
+    grid-template-areas: 'isi icon';
+    grid-template-columns: 1fr max-content;
+}
+.displayNot .isi:hover {
+    cursor: pointer;
+    background-color: #e2e2e2;
+}
+.displayNot .isi {
+    grid-area: 'isi';
+}
+.displayNot .icon {
+    grid-area: 'icon';
+}
+.Notify div small {
+    padding: 3px;
+    border-radius: 5px;
+}
+.Notify div small:nth-child(2):hover {
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+@media (max-width: 345px) {
+    .Notify {
+        right: 0;
+        max-width:  270px;
+        padding: 8px 6px;
+        font-size: 0.6rem;
+    }
+}

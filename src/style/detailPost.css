@@ -1,0 +1,118 @@
+.Detail-Post {
+    width: 100%;
+    padding: 0 2%;
+    color: #fff;
+    margin-top: -4px;
+    overflow: scroll;
+    background-color: rgb(0, 19, 30);
+}
+.text {
+    display: flex;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    justify-content: end;
+}
+.Detail-Post .card-post-img div,.Detail-Post .card-post-pdf div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sekat {
+    gap: 15px;
+    display: flex;
+}
+.Detail-Post .card-post-img div .post-deskripsi,.Detail-Post .card-post-pdf div .post-deskripsi {
+    display: flex;
+    color: #fff;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+}
+.Detail-Post .card-post-img .response,.Detail-Post .card-post-pdf .response {
+    color: #fff;
+}
+.Detail-Post .revFile img {
+    width: 110px;
+}
+.Detail-Post .revImg img {
+    width: 110px;
+}
+.text svg:hover {
+    color: #fff;
+    border-radius: 50px;
+    background-color: red;
+}
+.Detail-Post .card-post-img .action div {
+    gap: 10px;
+    display: flex;
+    color: #fff;
+}
+.Detail-Post .card-post-pdf .action div {
+    gap: 10px;
+    display: flex;
+    color: #fff;
+}
+.Detail-Post .card-post-docx .action div {
+    gap: 10px;
+    display: flex;
+    color: #fff;
+}
+.Detail-Post .card-post-img .action div div {
+    cursor: pointer;
+    background-color: orange;
+}
+.Detail-Post .card-post-pdf .action div div {
+    cursor: pointer;
+    background-color: orange;
+}
+.Detail-Post .card-post-docx .action div div {
+    cursor: pointer;
+    background-color: orange;
+}
+.relateContainer .text {
+    display: flex;
+    justify-content: start;
+}
+.relateContainer .relatePosts {
+    gap: 4px;
+    padding-bottom: 3px;
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+}
+.relateContainer .relatePosts div {
+    font-size: .6rem;
+}
+.relateContainer .relatePosts div .action small {
+    display: none;
+}
+.relateContainer .relatePosts div img {
+    width: 60px;
+}
+
+@media (max-width: 870px) {
+    .Detail-Post {
+        width: 96%;
+    }
+}
+@media (max-width: 345px) {
+    .Detail-Post .action small{
+        display: none;
+    }
+    .Detail-Post .response p{
+        display: none;
+    }
+    .Detail-Post .post-file img{
+        width: 35px;
+    }
+    .relateContainer .relatePosts .post-file img {
+        width: 35px;
+    }
+    .Detail-Post .post-deskripsi {
+        font-size: .6rem;
+    }
+
+    .Detail-Post .post-deskripsi p:nth-child(1) {
+        display: none;
+    }
+}

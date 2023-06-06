@@ -1,0 +1,98 @@
+.Navbar {
+    gap: 5px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 19, 30);
+}
+.logo {
+    width: 20%;
+    padding-left: 5%;
+}
+.logo a {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    text-decoration: none;
+}
+.logo a img {
+    width: 130px;
+    height: 40px;
+}
+.search {
+    gap: 5px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.navigation {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.notifikasi {
+    display: flex;
+}
+.notifikasi span {
+    width: 17px;
+    display: flex;
+    border-radius: 50px;
+    height: max-content;
+    background-color: red;
+    justify-content: center;
+}
+.notifikasi p {
+    color: #fff;
+}
+.navigation button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    border: none;
+    align-items: center;
+    border-radius: 50px;
+    justify-content: center;
+}
+.addPost {
+    display: none;
+}
+.logo a:hover {
+    transform: scale(0.9);
+}
+.logo a:hover .satu {
+    rotate: -80deg;
+}
+.logo a:hover .dua {
+    rotate: 80deg;
+}
+.navigation button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: rgb(255, 166, 2);
+}
+
+@media (max-width: 685px) {
+    .navigation {
+        width: 35%;
+    }
+    .addPost  {
+        display: inherit;
+    }
+}
+@media (max-width: 345px) {
+    .logo a img {
+        width: 65px;
+        height: 32px;
+    }
+    .navigation {
+        width: 45%;
+    }
+    .navigation button {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,95 @@
+.Populer {
+    gap: 5px;
+    right: 0;
+    width: 35%;
+    z-index: 3;
+    height: 100%;
+    top: 106px;
+    display: flex;
+    position: fixed;
+    padding: 5px;
+    color: #fff;
+    flex-direction: column;
+    background-color: rgb(0, 19, 30);
+}
+.hidePopuler {
+    gap: 5px;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    top: 106px;
+    display: flex;
+    position: fixed;
+    padding: 5px;
+    flex-direction: column;
+    background-color: rgb(0, 19, 30);
+}
+.addpostButton {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    color: #fff;
+    border: none;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: orange;
+}
+.populer-data {
+    gap: 10px;
+    padding: 10px;
+    display: grid;
+    color: #fff;
+    max-height: 75%;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+}
+.populer-sign {
+    gap: 10px;
+    padding: 10px;
+    display: grid;
+    color: #fff;
+    max-height: 70%;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+}
+.addpostButton:hover {
+    cursor: pointer;
+    background-color: rgb(255, 183, 50);
+}
+.Populer .post-deskripsi {
+    font-size: small;
+}
+.Populer .action {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 870px) {
+    .Populer,.hidePopuler {
+        width: 45.5%;
+    }
+    .Populer .hide {
+        display: none;
+    }
+}
+@media (max-width: 685px) {
+    .Populer,.hidePopuler {
+        display: none;
+    }
+    .Posts {
+        width: 100%;
+    }
+    .Hero {
+        width: 100%;
+    }
+    .Populer .hide {
+        display: inherit;
+    }
+}

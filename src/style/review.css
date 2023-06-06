@@ -1,0 +1,33 @@
+.Review {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: #fff;
+}
+.close {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    color: red;
+    justify-content: end;
+}
+.Review .viewBody {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.Review .viewDoc * {
+    color: #000;
+    width: 100%;
+}
+.Review .viewBody img {
+    height: 97%;
+    width: max-content;
+    border-radius: 3px;
+}

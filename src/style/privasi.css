@@ -1,0 +1,14 @@
+.Privasi {
+    gap: 5px;
+    width: 100%;
+    display: grid;
+    margin-top: -18px;
+    justify-content: end;
+}
+.privasi {
+    gap: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+}

@@ -1,0 +1,93 @@
+.Hero {
+    top: 106px;
+    width: 60%;
+    height: 90px;
+    z-index: 3;
+    color: #fff;
+    display: grid;
+    position: fixed;
+    padding-left: 8%;
+    background-color: rgb(0, 19, 30);
+}
+.heroHide {
+    top: 106px;
+    width: 49%;
+    color: #fff;
+    display: grid;
+    position: fixed;
+    padding-left: 8%;
+}
+.searchText {
+    display: flex;
+    align-items: center;
+}
+.searchInput {
+    gap: 10px;
+    display: flex;
+}
+.searchInput button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchInput img {
+    width: 34px;
+    height: 34px;
+}
+.Hero input{
+    width: 60%;
+    height: 33px;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 10px;
+    border: 1px solid #aeaeae;
+}
+
+@media (max-width: 900px) {
+    .Hero {
+        padding-left: 4%;
+    }
+    .Hero input {
+        width: 65%;
+    }
+}
+@media (max-width: 870px) {
+    .Hero {
+        padding-left: 2%;
+    }
+    .Hero input {
+        width: 61%;
+    }
+}
+@media (max-width: 680px) {
+    .Hero {
+        padding-left: 7%;
+    }
+    .Hero input {
+        width: 68%;
+    }
+}
+
+@media (max-width: 345px) {
+    .searchText {
+        font-size: .6rem;
+    }
+    .Hero input {
+        width: 59%;
+        height: 22px;
+        font-size: 60%;
+    }
+    .searchInput {
+        gap: 5px;
+    }
+    .searchInput button {
+        width: 23.9px;
+        height: 23.6px;
+    }
+    .searchInput img {
+        width: 28px;
+        height: 28px;
+    }
+}

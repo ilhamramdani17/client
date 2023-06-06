@@ -1,0 +1,79 @@
+.Setting {
+    gap: 15px;
+    top: 70px;
+    z-index: 5;
+    right: 10px;
+    padding: 15px 13px;
+    display: flex;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #fff;
+}
+.Setting .bio .name {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+.pic {
+    padding: 5px;
+    max-height: 140px;
+    border-radius: 5px;
+    background-color: rgb(0, 19, 30);
+}
+.Setting .pic button {
+    border: none;
+    color: #fff;
+    padding: 50px 35px;
+    background-color: rgb(0, 19, 30);
+}
+.Setting .bio {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.user-bio {
+    gap: 7px;
+    display: flex;
+}
+.user-bio div {
+    gap: 10px;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e0e0e0;
+}
+.user-bio div:hover {
+    color: #fff;
+    background-color: rgb(0, 19, 30);
+}
+.log {
+    gap: 10px;
+    padding: 5px;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+.log:hover {
+    background-color: rgb(0, 19, 30);
+}
+@media (max-width: 345px) {
+    .Setting {
+        right: 0;
+        font-size: 0.5rem;
+    } 
+    .Setting .pic {
+        max-height: 90px;
+    }
+    .Setting .pic button {
+        padding: 30px 15px;
+    } 
+}
