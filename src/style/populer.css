@@ -4,7 +4,7 @@
     width: 35%;
     z-index: 3;
     height: 100%;
-    top: 106px;
+    top: 103px;
     display: flex;
     position: fixed;
     padding: 5px;
@@ -17,7 +17,7 @@
     right: 0;
     width: 40%;
     height: 100%;
-    top: 106px;
+    top: 103px;
     display: flex;
     position: fixed;
     padding: 5px;
@@ -40,7 +40,7 @@
     padding: 10px;
     display: grid;
     color: #fff;
-    max-height: 75%;
+    max-height: 82%;
     cursor: pointer;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -52,10 +52,15 @@
     padding: 10px;
     display: grid;
     color: #fff;
-    max-height: 70%;
+    max-height: 76%;
     cursor: pointer;
     overflow-x: hidden;
     overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+}
+.Populer .post-file  {
+    display: flex;
     align-items: center;
     justify-content: center;
 }

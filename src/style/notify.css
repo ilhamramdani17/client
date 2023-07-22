@@ -5,8 +5,9 @@
     right: .7%;
     width: 400px;
     display: flex;
+    max-height: 400px;
     padding: 15px 13px;
-    overflow: hidden;
+    overflow-y: scroll;
     border-radius: 5px;
     position: absolute;
     flex-direction: column;

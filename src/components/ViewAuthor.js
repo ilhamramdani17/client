@@ -1,11 +1,8 @@
 import axios from "axios";
 import "../style/viewAuthor.css"
 import { useEffect, useState } from "react";
-import { io } from "socket.io-client";
-const socket = io.connect("http://localhost:8000")
 
 const ViewAuthor = (props) => {
-
     const [posts,setPosts] = useState('')
 
     useEffect(() => {
@@ -18,30 +15,32 @@ const ViewAuthor = (props) => {
         setPosts(data)
     },[])
 
-    function makeid(length) {
-        var result           = '';
-        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        var charactersLength = characters.length;
-        for ( var i = 0; i < length; i++ ) {
-           result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-     }
-
     function handleSubscribe (id) {
-        axios.post("http://localhost:8000/addSubscribe",{userid: id,id: props.user._id})
+        props.setLoad(true)
+        axios.post("http://localhost:8000/addSubscribe",{userid: id,id: props.user._id,username: props.user.username})
         .then((result) => {
-            props.setUserDetail(result.data.user2[0]);
-            props.setUser(result.data.user1[0]);
-            socket.emit("subscribe",{_id: makeid(8),id: id,sub: props.user})
+            props.setUserDetail(result.data.payload.user2[0]);
+            props.setUser(result.data.payload.user1[0]);
+            props.setLoad(false)
+            props.setAlert({
+                "bool": true,
+                "status": result.data.status,
+                "msg": result.data.mssg
+            }) 
         })
     }
     function handleUnsubscribe (id) {
-        axios.post("http://localhost:8000/Unsubscribe",{userid: id,id: props.user._id})
+        props.setLoad(true)
+        axios.post("http://localhost:8000/Unsubscribe",{userid: id,id: props.user._id,username: props.user.username})
         .then((result) => {
-            props.setUserDetail(result.data.user2[0]);
-            props.setUser(result.data.user1[0]);
-            socket.emit("unsubscribe",{_id: makeid(8),id: id,sub: props.user})
+            props.setUserDetail(result.data.payload.user2[0]);
+            props.setUser(result.data.payload.user1[0]);
+            props.setAlert({
+                "bool": true,
+                "status": result.data.status,
+                "msg": result.data.mssg
+            }) 
+            props.setLoad(false)
         })
     }
 

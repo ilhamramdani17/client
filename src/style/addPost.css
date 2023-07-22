@@ -3,9 +3,9 @@
     width: 100%;
     display: grid;
     padding: 1%;
-    height: 71.5%;
+    height: 75.5%;
     overflow: scroll;
-    grid-template-columns: 1fr 0.6fr;
+    grid-template-columns: 1fr;
     background-color: rgb(0, 19, 30);
 }
 .addContainer {
@@ -13,29 +13,29 @@
     width: 100%;
     display: grid;
     padding: 3px;
-    color: #eaeaea;
+    color: #fff;
     height: max-content;
     border-radius: 5px;
-    border: 2px dashed #b3b3b3;
+    background-color: rgba(221, 7, 7, 0.786);
 }
 .reviewContainer {
-    padding: 0;
+    gap: 5%;
+    width: 60%;
+    padding:  4px 0;
     height: 45.3%;
     display: flex;
+    color: #000;
     border-radius: 3px;
     align-items: center;
-    justify-content: center;
-    background-color: #eaeaea;
+    justify-content: space-between;
+    background-color: #dedede;
+}
+.reviewContainer div {
+    display: flex;
 }
 .viewBody {
   padding: 1px; 
   width: 100%; 
-}
-.notRev {
-    padding: 4px 4px 0 4px;
-    width: max-content;
-    text-align: center;
-    border: 2px dashed #b3b3b3;
 }
 .addText {
     width: 100%;
@@ -50,6 +50,9 @@
     flex-direction: column;
     justify-content: center;
 }
+.privasi select {
+    border-radius: 0;
+}
 .addBody {
     height: max-content;
 }
@@ -61,7 +64,7 @@
 }
 .isi input {
     width: 90%;
-    border: 1px solid #afafaf;
+    border: 1px solid #848484;
     outline: none;
     border-radius: 5px;
     padding: 8px;
@@ -80,17 +83,32 @@ select {
     width: 80px;
     cursor: pointer;
     outline: none;
+    border: none;
+    padding-left: 3px;
+    border-radius: 0;
 }
 .addBody button {
     height: 30px;
     border: none;
     cursor: pointer;
+    color: #fff;
     border-radius: 5px;
+    background-color: #9b9b9b;
 }
 .addFile {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.addFile label {
+    display: flex;
+    padding: 2px 0;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #848484;
+}
+.addFile label:hover {
+    background-color: orange;
 }
 .addFile input {
     display: none;
@@ -101,17 +119,23 @@ select {
 }
 .reviewPdf {
     gap: 10px;
+    width: 80%;
     padding: 2px;
     display: flex;
-    width: max-content;
+    color: #000;
+    border-radius: 3px;
+    overflow-x: scroll;
     align-items: center;
+    background-color: #eaeaea;
 }
 .reviewImg {
     gap: 10px;
     padding: 2px;
     display: flex;
+    color: #000;
     width: max-content;
     align-items: center;
+    background-color: #eaeaea;
 }
 .reviewPdf span,.reviewImg span {
     width: 20px;
@@ -123,7 +147,7 @@ select {
     border-radius: 5px;
     align-items: center;
     justify-content: center;
-    background-color: #eaeaea;
+    background-color: #b1b1b1;
 }
 .reviewPdf img {
     width: 40px;
@@ -153,14 +177,6 @@ svg {
     color: orange;
 }
 
-@media (max-width: 600px) {
-    .addContainer {
-        padding: 1%;
-        width: 98%;
-        font-size: 80%;
-    }
-}
-
 @media (max-width: 345px) {
     .AddPost {
         font-size: .6rem;
@@ -168,9 +184,26 @@ svg {
         grid-template-columns: 1fr;
     }
     .isi input {
-        height: 10px;
+        height: 28px;
     }
     .reviewContainer  {
-        display: none;
+        gap: 5px;
+        width: 80%;
+        margin-top: 15px;
+        overflow-x: scroll;
+    }
+    .reviewContainer svg {
+        width: 16px;
+    }
+    .reviewContainer div {
+        display: flex;
+        align-items: center;
+    }
+    .addFile label {
+        padding: 0;
+        margin-top: 15px;
+    }
+    .addFile label svg {
+        width: 19px;
     }
 }

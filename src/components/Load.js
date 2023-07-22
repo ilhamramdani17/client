@@ -1,13 +1,11 @@
-import "../style/alert.css"
+import "../style/load.css"
 
 const Load = (props) => {
 
     return (
-        <div className="alert">
-            <div className="success">
-                <img src="http://localhost:3000/loader.gif"/>
-                <h3>Loading...</h3>
-            </div>
+        <div className="load">
+            <h3>Loading...</h3>
+            <img src="http://localhost:3000/loader.gif"/>
         </div>
     )
 }

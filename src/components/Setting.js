@@ -29,7 +29,7 @@ const Setting = (props) => {
             .then((result) => {
                 setDisplay(true)
                 setDatas({
-                    "type": "subs",
+                    "type": "subscriber",
                     "data": result.data
                 });
             })
@@ -38,11 +38,36 @@ const Setting = (props) => {
             .then((result) => {
                 setDisplay(true)
                 setDatas({
-                    "type": "subs",
+                    "type": "subscribing",
                     "data": result.data
                 });
             })
         }
+    }
+
+    function handleSave () {
+        axios.post("http://localhost:8000/getSave",{save: props.user.savePost})
+            .then((result) => {
+                setDisplay(true)
+                setDatas({
+                    "type": "post",
+                    "desc": "save",
+                    "data": result.data
+                });
+            })
+    }
+
+    function handleHide () {
+        axios.post("http://localhost:8000/getHide",{hide: props.user.hidenPost})
+            .then((result) => {
+                console.log(result.data);
+                setDisplay(true)
+                setDatas({
+                    "type": "post",
+                    "desc": "hide",
+                    "data": result.data
+                });
+            })
     }
 
     function handleLogout () {
@@ -85,12 +110,29 @@ const Setting = (props) => {
                         <p>{props.user.subscribing.length}</p>
                     </div>
                 </div>
+            </div>
                 {display
                 ?
-                    <Display datas={datas} setSetting={props.setSetting} handleDetail={props.handleDetail}/>
+                    <div className="dis">
+                            <Display datas={datas} browser={props.browser} user={props.user} setSetting={props.setSetting} handleDetail={props.handleDetail}/>
+                    </div>
                 :
                     ""
                 }
+                <div className="save" onClick={() => handleSave ()}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    <h4>Unggahan Disimpanan</h4>
+                </div>
+                <div className="hide" onClick={() => handleHide ()}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" onClick={() => props.setViewer(false)}>
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                    <h4>Unggahan Disembunyikan</h4>
+                </div>
                 <div className="log" onClick={() => handleLogout()}>
                         <h3>Logout</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -98,7 +140,6 @@ const Setting = (props) => {
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                         </svg>
                 </div>
-            </div>
         </div>
     )
 }

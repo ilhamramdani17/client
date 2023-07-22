@@ -3,12 +3,10 @@ import "../style/navbar.css";
 import axios from "axios";
 import Notify from "./Notify";
 import Setting from "./Setting";
-import Cookies from "js-cookie";
-import { io } from "socket.io-client";
-const socket = io.connect("http://localhost:8000")
 
 const Navbar = (props) => {
 
+    const [hide,setHide] = useState([])
     const [notifikasi,setNotifikasi] = useState([])
 
     function reverseArr(input) {
@@ -20,45 +18,17 @@ const Navbar = (props) => {
     }
 
     useEffect(() => {
-        let token = Cookies.get('auth')
-        if (token !== undefined) {
-          axios.post("http://localhost:8000/getUserByToken",{token: token})
-          .then((result) => {
-            if (result.data.auth == true) {
-                socket.on("getNotifikasi",(data) => {
-                    if (Cookies.get('notify')) {
-                       let history = JSON.parse(Cookies.get('notify')).concat(data)
-                       const uniq = new Set(history.map(e => JSON.stringify(e)));
-                       const array = Array.from(uniq).map(e => JSON.parse(e));
-                       Cookies.set('notify', JSON.stringify(array), {
-                            path: "/",
-                            secure: true,
-                            sameSite: "strict",
-                            expires: 600
-                       })
-                    }else {
-                        Cookies.set('notify', JSON.stringify(data), {
-                            path: "/",
-                            secure: true,
-                            sameSite: "strict",
-                            expires: 600
-                        })
+            axios.post('http://localhost:8000/getNotif',{user: props.user._id})
+            .then((result) => {
+                let hide = []
+                setNotifikasi(reverseArr(result.data));
+                result.data.map((data) => {
+                    if (data.status == "hide") {
+                        hide.push(data)
                     }
                 })
-            }
-            if (Cookies.get('notify')) {
-                const data = JSON.parse(Cookies.get('notify'))
-                const notify = []
-                data.map((item) => {
-                    if (item.to === result.data.user._id && item.from !== result.data.user._id) {
-                        notify.push(item)
-                    }
-                })
-                const hasil = reverseArr(notify)
-                setNotifikasi(hasil)
-            }
-          })
-        }
+                setHide(hide)
+            })
     },[props.user,notifikasi])
 
     function handleAdd () {
@@ -80,7 +50,7 @@ const Navbar = (props) => {
     return (
         <div className="Navbar">
         <div className="logo">
-            <a href="/"><img src="http://localhost:3000/logo.png"/></a>
+            <a href="/"><img src="http://localhost:3000/logo92.png"/></a>
         </div>
         {props.user
             ?
@@ -98,9 +68,9 @@ const Navbar = (props) => {
                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
                         </svg>
                     </button>
-                    {notifikasi && notifikasi.length > 0
+                    {hide && hide.length > 0
                     ?
-                        <span><p>{notifikasi.length}</p></span>
+                        <span><p>{hide.length}</p></span>
                     :   
                         ""
                     }
@@ -118,11 +88,11 @@ const Navbar = (props) => {
                 ""
         }
         {props.setting && props.user
-            ? <Setting user={props.user} setUser={props.setUser} setSetting={props.setSetting} setDetail={props.setDetail} setAddPost={props.setAddPost} handleDetail={props.handleDetail}/>
+            ? <Setting user={props.user} browser={props.browser} setUser={props.setUser} setLoad={props.setLoad} setSetting={props.setSetting} setDetail={props.setDetail} setAddPost={props.setAddPost} handleDetail={props.handleDetail}/>
             : ""
         }
         {props.notif && props.user
-            ? <Notify notif={props.notif} setNotif={props.setNotif} notifikasi={notifikasi} handleSetting={handleSetting} handleDetail={props.handleDetail}/>
+            ? <Notify user={props.user} notif={props.notif} setLoad={props.setLoad} setAlert={props.setAlert} setNotif={props.setNotif} notifikasi={notifikasi} handleSetting={handleSetting} handleDetail={props.handleDetail}/>
             : ""
         }
         </div>

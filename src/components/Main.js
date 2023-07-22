@@ -15,13 +15,13 @@ const Main = (props) => {
             }
             {props.detail.bool && !props.addPost
                 ?
-                    <DetailPost user={props.user} kategorikPosts={props.kategorikPosts} setLoad={props.setLoad} postsDetail={props.postsDetail} setPostsDetail={props.setPostsDetail} viewer={props.viewer} setViewer={props.setViewer} setLogin={props.setLogin} posts={props.detail.post} handleDetail={props.handleDetail}/>
+                    <DetailPost user={props.user} browser={props.browser} kategorikPosts={props.kategorikPosts} setLoad={props.setLoad} setAlert={props.setAlert} postsDetail={props.postsDetail} setPostsDetail={props.setPostsDetail} viewer={props.viewer} setViewer={props.setViewer} setLogin={props.setLogin} posts={props.detail.post} handleDetail={props.handleDetail}/>
                 :
                     ""
             }
             {!props.detail.bool && !props.addPost
                 ?
-                    <Posts user={props.user} setUser={props.setUser} socket={props.socket} setSetting={props.setSetting} kategori={props.kategori} setAddPost={props.setAddPost} handleDetail={props.handleDetail}/>
+                    <Posts user={props.user} browser={props.browser} setLoad={props.setLoad} setLogin={props.setLogin} setAlert={props.setAlert} setUser={props.setUser} socket={props.socket} setSetting={props.setSetting} kategori={props.kategori} setAddPost={props.setAddPost} handleDetail={props.handleDetail}/>
                 :
                     ""
             }

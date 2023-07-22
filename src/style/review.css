@@ -20,14 +20,19 @@
 .Review .viewBody {
     display: flex;
     width: 100%;
+    overflow: hidden;
     justify-content: center;
 }
-.Review .viewDoc * {
-    color: #000;
-    width: 100%;
+.Review .viewBody embed {
+    height: 100%;
 }
-.Review .viewBody img {
-    height: 97%;
-    width: max-content;
-    border-radius: 3px;
+.Review .viewBodyUnix {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+}
+.Review .viewBodyUnix embed {
+    height: 100%;
+    margin-top: -35px;
 }

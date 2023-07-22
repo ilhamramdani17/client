@@ -85,8 +85,8 @@
 }
 @media (max-width: 345px) {
     .logo a img {
-        width: 65px;
-        height: 32px;
+        width: 70px;
+        height: 30px;
     }
     .navigation {
         width: 45%;

@@ -1,22 +1,10 @@
 import axios from "axios";
 import "../style/comment.css";
 import React, {useState} from "react";
-import {io} from "socket.io-client"
-const socket = io.connect("http://localhost:8000")
 
 const Comment = (props) => {
 
     const [comment,setComment] = useState('')
-
-    function makeid(length) {
-        var result           = '';
-        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        var charactersLength = characters.length;
-        for ( var i = 0; i < length; i++ ) {
-           result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-    }
 
     const handleAddComment = async () => {
         props.setLoad(true)
@@ -27,17 +15,15 @@ const Comment = (props) => {
             postid : props.postid,
             comment : comment
         }
-       const add = await axios.post("http://localhost:8000/addComment",{data})
+       const add = await axios.post("http://localhost:8000/addComment",{data,to: props.userid,from: props.user._id,username: props.user.username})
        if (add.data.status === "success") {
            setComment('')
            props.setLoad(false)
-           socket.emit("addcomment",{
-            "_id": makeid(8),
-            "to": props.userid,
-            "from": props.user._id,
-            "postid": props.postid,
-            "username": props.user.username
-           })
+           props.setAlert({
+            "bool": true,
+            "status": "success",
+            "msg": "Comment Berhasil"
+        })
            props.setPostsDetail(add.data.payload)
        }
     }

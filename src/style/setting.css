@@ -1,13 +1,18 @@
 .Setting {
-    gap: 15px;
+    gap: 10px;
     top: 70px;
     z-index: 5;
     right: 10px;
     padding: 15px 13px;
-    display: flex;
+    display: grid;
     border-radius: 5px;
     position: absolute;
     background-color: #fff;
+    grid-template-areas: 'pic bio'
+                         'save save'
+                         'hide hide'
+                         'dis dis'
+                         'log log';
 }
 .Setting .bio .name {
     display: flex;
@@ -16,18 +21,37 @@
     flex-direction: column;
 }
 .pic {
+    grid-area: pic;
     padding: 5px;
-    max-height: 140px;
+    max-height: 115px;
     border-radius: 5px;
     background-color: rgb(0, 19, 30);
+}
+.dis {
+    grid-area: dis;
+}
+.save {
+    grid-area: save;
+}
+.hide {
+    grid-area: hide;
+}
+.save,.hide {
+    gap: 5px;
+    padding: 2px;
+    padding-left: 5px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
 }
 .Setting .pic button {
     border: none;
     color: #fff;
-    padding: 50px 35px;
+    padding: 30px 25px;
     background-color: rgb(0, 19, 30);
 }
 .Setting .bio {
+    grid-area: bio;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -52,6 +76,7 @@
     background-color: rgb(0, 19, 30);
 }
 .log {
+    grid-area: log;
     gap: 10px;
     padding: 5px;
     color: #fff;
@@ -65,15 +90,20 @@
 .log:hover {
     background-color: rgb(0, 19, 30);
 }
+.save:hover,.hide:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: orange;
+}
 @media (max-width: 345px) {
     .Setting {
         right: 0;
         font-size: 0.5rem;
     } 
     .Setting .pic {
-        max-height: 90px;
+        max-height: 74px;
     }
     .Setting .pic button {
-        padding: 30px 15px;
+        padding: 15px 15px;
     } 
 }

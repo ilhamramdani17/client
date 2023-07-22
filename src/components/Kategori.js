@@ -5,6 +5,7 @@ import Cookies from "js-cookie"
 const Kategori = (props) => {
 
     function handleKategori (data) {
+        props.setLoad(true)
         props.setKategori(data)
     }
 

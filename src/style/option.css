@@ -1,0 +1,33 @@
+.option {
+    gap: 10px;
+    top: 30px;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    color: #fff;
+    padding: 13px 15px;
+    border-radius: 5px;
+    position: absolute;
+    flex-direction: column;
+    background-color: #363636;
+}
+.option li {
+    padding: 5px;
+    list-style: none;
+    border-radius: 3px;
+}
+.option li svg {
+    margin-right: 5px;
+}
+.option li:hover {
+    color: #fff;
+    background-color: orange;
+}
+
+@media (max-width: 345px) {
+    .option {
+        right: 5%;
+        color: #fff;
+        background-color: #201f1f;
+    }
+}

@@ -1,13 +1,13 @@
 .Main {
     top: 190px;
-    width: 64.4%;
+    width: 65%;
     height: 100%;
     display: flex;
     position: fixed;
 }
 .UpMain {
     top: 110px;
-    width: 64.4%;
+    width: 65%;
     height: 100%;
     display: flex;
     position: fixed;

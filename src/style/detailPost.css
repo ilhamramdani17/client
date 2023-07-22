@@ -1,118 +1,89 @@
 .Detail-Post {
     width: 100%;
+    height: 88%;
     padding: 0 2%;
     color: #fff;
-    margin-top: -4px;
+    padding-top: 8px;
+    margin-top: -7px;
     overflow: scroll;
     background-color: rgb(0, 19, 30);
 }
-.text {
-    display: flex;
-    margin-top: 7px;
-    margin-bottom: 10px;
-    justify-content: end;
+.Detail-Post .card-post-pdf {
+    width: 100%;
 }
-.Detail-Post .card-post-img div,.Detail-Post .card-post-pdf div {
+.Detail-Post .post-file {
+    width: 100%;
+    justify-content: center;
+}
+.Detail-Post .response div {
     display: flex;
-    align-items: center;
+    padding: 1px;
+    border-radius: 4px;
+}
+.Detail-Post .post-des {
+    display: flex;
     justify-content: space-between;
 }
-.sekat {
-    gap: 15px;
-    display: flex;
-}
-.Detail-Post .card-post-img div .post-deskripsi,.Detail-Post .card-post-pdf div .post-deskripsi {
-    display: flex;
-    color: #fff;
-    align-items: start;
-    flex-direction: column;
-    justify-content: start;
-}
-.Detail-Post .card-post-img .response,.Detail-Post .card-post-pdf .response {
-    color: #fff;
-}
-.Detail-Post .revFile img {
-    width: 110px;
-}
-.Detail-Post .revImg img {
-    width: 110px;
-}
-.text svg:hover {
-    color: #fff;
-    border-radius: 50px;
-    background-color: red;
-}
-.Detail-Post .card-post-img .action div {
-    gap: 10px;
-    display: flex;
-    color: #fff;
-}
-.Detail-Post .card-post-pdf .action div {
-    gap: 10px;
-    display: flex;
-    color: #fff;
-}
-.Detail-Post .card-post-docx .action div {
-    gap: 10px;
-    display: flex;
-    color: #fff;
-}
-.Detail-Post .card-post-img .action div div {
-    cursor: pointer;
-    background-color: orange;
-}
-.Detail-Post .card-post-pdf .action div div {
-    cursor: pointer;
-    background-color: orange;
-}
-.Detail-Post .card-post-docx .action div div {
-    cursor: pointer;
-    background-color: orange;
-}
-.relateContainer .text {
-    display: flex;
-    justify-content: start;
-}
-.relateContainer .relatePosts {
-    gap: 4px;
-    padding-bottom: 3px;
-    display: flex;
+.relateContainer {
     width: 100%;
     overflow-x: scroll;
 }
-.relateContainer .relatePosts div {
-    font-size: .6rem;
+.relatePosts {
+    margin-top: 10px;
 }
-.relateContainer .relatePosts div .action small {
+.relatePosts .card-post-pdf {
+    width: 40%;
+    height: max-content;
+}
+.relatePosts .post-des {
+    display: flex;
+    flex-direction: column;
+}
+.relatePosts .response p {
     display: none;
 }
-.relateContainer .relatePosts div img {
-    width: 60px;
+.Detail-Post .sekat2 .action {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+.Detail-Post .sekat2 .action div {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+.Detail-Post .sekat2 .action .loginButton {
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    background-color: orange;
+}
+.Detail-Post .sekat2 .action div div {
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    background-color: orange;
 }
 
-@media (max-width: 870px) {
-    .Detail-Post {
-        width: 96%;
-    }
+.Detail-Post .response div:hover {
+    color: #fff;
+    background-color: orange;
 }
+
 @media (max-width: 345px) {
-    .Detail-Post .action small{
+    .Detail-Post {
+        padding: 0 1.2%;
+        padding-top: 5px;
+    }
+    .Detail-Post {
+        font-size: .5rem;
+    }
+    .response div p {
         display: none;
     }
-    .Detail-Post .response p{
-        display: none;
-    }
-    .Detail-Post .post-file img{
-        width: 35px;
-    }
-    .relateContainer .relatePosts .post-file img {
-        width: 35px;
-    }
-    .Detail-Post .post-deskripsi {
-        font-size: .6rem;
-    }
-
-    .Detail-Post .post-deskripsi p:nth-child(1) {
+    .Detail-Post .sekat2 .action .loginButton small,.Detail-Post .sekat2 .action div div small {
         display: none;
     }
 }
